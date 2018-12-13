@@ -17,10 +17,6 @@ app.post('/', async function (req, res) {
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
   let weatherPromise = await request.get(url)
 
-  
-
-
-
 await request(url, function (err, response, body) {
     if(err){
       res.render('index', {weather: null, error: 'Error, please try again'});
